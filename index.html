@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WorkflowNow Landing Page</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#2563eb", 
+                "primary-bright": "#3b82f6",
+                "primary-glow": "#60a5fa",
+                "background-dark": "#020617",
+                "surface-dark": "#0f172a",
+                "surface-light": "#1e293b",
+              },
+              fontFamily: {
+                "display": ["Outfit", "sans-serif"],
+                "body": ["Noto Sans", "sans-serif"],
+              },
+              backgroundImage: {
+                'grid-pattern': "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')",
+                'tech-dots': "url('https://www.transparenttextures.com/patterns/black-scales.png')",
+              },
+              animation: {
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'float': 'float 6s ease-in-out infinite',
+                'shimmer': 'shimmer 2.5s linear infinite',
+              },
+              keyframes: {
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-20px)' },
+                },
+                shimmer: {
+                  '0%': { transform: 'translateX(-100%)' },
+                  '100%': { transform: 'translateX(100%)' },
+                }
+              }
+            },
+          },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+          .glass-card {
+            @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20;
+          }
+          .glass-card-hover {
+            @apply hover:bg-slate-800/50 hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300;
+          }
+          .glass-panel {
+            @apply bg-white/5 backdrop-blur-md border border-white/10;
+          }
+          .text-glow {
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+          }
+          .icon-glow {
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+          }
+          .hero-gradient {
+             background: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, rgba(2, 6, 23, 0) 50%);
+          }
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-300 font-body overflow-x-hidden selection:bg-primary-bright selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<header class="fixed top-0 z-50 w-full border-b border-white/5 bg-[#020617]/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex items-center justify-between px-6 py-4 lg:px-10 max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="size-10 text-blue-500 bg-gradient-to-br from-blue-500/20 to-transparent rounded-xl p-2 backdrop-blur-sm border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-extrabold leading-tight tracking-tight text-white font-display">Workflow<span class="text-blue-500">Now</span></h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors tracking-wide" href="#solutions">Solutions</a>
+<a class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors tracking-wide" href="#services">Services</a>
+<a class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition-colors tracking-wide" href="#methodology">Methodology</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-7 bg-primary hover:bg-blue-500 transition-all text-white text-sm font-bold shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:shadow-[0_0_35px_rgba(59,130,246,0.7)] border border-blue-400/30 transform hover:-translate-y-0.5">
+<span class="truncate">Get Started</span>
+</button>
+</div>
+<button class="lg:hidden text-white p-2">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<section class="relative w-full min-h-screen flex items-center pt-32 pb-24 lg:pt-40 lg:pb-32 px-6 lg:px-10 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="High-tech IT center background" class="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkm5u11cXkOLqMNwHIV4PyEmE2YgV6TwFc971mQV83CvFxmRuTCr-7XxiZbGAKVMffh9tsU4e94m-muZXNfcc1h4WmDTdyLnDsiFlnazhqIdySZBqsaUgDGQN7BLd2XBjX7zNaORRadxj9VoA7rxR58ZPiz7hqDgEBzF7WElvkKMUZC9l7IsqpguAeZETfOEnLM_PEJPj_FolWkVxphTGuUQyDw4ZKcw-MsU63nnK8tK4Nf0Z6t0ovisassHPze3D8_R8fWH4ZeFYf"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/95 to-blue-900/60 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent"></div>
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto w-full">
+<div class="@container">
+<div class="flex flex-col lg:flex-row gap-20 items-center">
+<div class="flex flex-col gap-8 lg:w-1/2">
+<div class="flex flex-col gap-6 text-left">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 w-fit backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+</span>
+<span class="text-xs font-bold text-blue-300 tracking-widest uppercase">ITSM Enterprise v2.0</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-display font-extrabold leading-[1.1] tracking-tight text-white drop-shadow-2xl">
+                                Transform IT with <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 text-glow">Intelligent Flows</span>
+</h1>
+<p class="text-xl text-slate-300 font-light leading-relaxed max-w-xl border-l-2 border-blue-500/30 pl-6">
+                                Accelerate resolution times and automate complex workflows with our next-gen IT service management platform.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="group flex min-w-[180px] cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-white text-blue-950 hover:bg-blue-50 transition-all text-base font-bold shadow-[0_0_25px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]">
+                                Request Demo
+                                <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-white/5 hover:bg-white/10 backdrop-blur-xl transition-colors text-white text-base font-bold border border-white/20 hover:border-white/50 shadow-lg">
+                                View Solutions
+                            </button>
+</div>
+<div class="flex items-center gap-6 pt-6 border-t border-white/5 w-full max-w-md">
+<div class="flex flex-col">
+<span class="text-3xl font-display font-bold text-white">2.5M+</span>
+<span class="text-xs text-slate-400 uppercase tracking-wider">Tickets Resolved</span>
+</div>
+<div class="w-px h-10 bg-white/10"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-display font-bold text-white">500+</span>
+<span class="text-xs text-slate-400 uppercase tracking-wider">Enterprise Clients</span>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 perspective-1000 relative">
+<div class="relative w-full aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 group shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-transform hover:scale-[1.01] duration-700 z-10 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent z-20 pointer-events-none mix-blend-screen"></div>
+<div class="w-full h-full bg-center bg-cover opacity-90" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0_it-dR97psEcWKLyB21fv_mF2dd65fZimtmcgHRueGm-mA74oZJI73lbFO8gbKsadw_Gp8nRJltKnoxwO4GeZBDSl-nW8rIkoSQff0BT4OPyDLy9PDaUqnioHbsn0VHgbIQ8wJzvfgooYUwpT9F8OirEiK0TWCFLw6yr4V_TSEv8Q38d_bdfHdxEqdiK76VskMNmxHF9JT_njP0Zdy99Pyr_oGNq-_sy4rY4TjiwQ_lU46Eo3Cfc4uoR6WGJWHKJNPBcPrQmN5A1');"></div>
+<div class="absolute bottom-8 left-8 p-5 glass-card rounded-xl z-30 w-72 animate-[float_4s_ease-in-out_infinite] border-l-4 border-l-green-400">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-green-500/20 rounded-md text-green-400 shadow-[0_0_10px_rgba(74,222,128,0.2)]">
+<span class="material-symbols-outlined text-base">check_circle</span>
+</div>
+<div>
+<div class="text-xs font-bold text-white uppercase tracking-wider">Auto-Remediation</div>
+<div class="text-[10px] text-slate-400">Server restart complete</div>
+</div>
+</div>
+<span class="text-[10px] font-mono text-slate-400">00:02s</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-slate-300">
+<span>System Health</span>
+<span class="text-green-400">98%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-700/50 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-green-500 to-emerald-400 w-[98%] shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+</div>
+</div>
+</div>
+<div class="absolute top-8 right-8 p-4 glass-card rounded-xl z-30 animate-[float_5s_ease-in-out_infinite_1s] border-t-4 border-t-blue-500">
+<div class="flex items-center gap-4">
+<div class="relative size-12">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<path class="text-slate-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-blue-500 drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="85, 100" stroke-width="3"></path>
+</svg>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[11px] font-bold text-white">85%</div>
+</div>
+<div>
+<div class="text-sm font-bold text-white">Efficiency</div>
+<div class="text-[10px] text-green-400 font-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">trending_up</span> +24%
+                                        </div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -inset-4 bg-blue-600/20 blur-3xl -z-10 rounded-full opacity-50"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-24 px-6 lg:px-10 bg-[#020617] overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/10 to-transparent"></div>
+<div class="relative z-10 max-w-[1280px] mx-auto w-full">
+<div class="flex flex-col gap-4 mb-16 text-center lg:text-left">
+<h2 class="text-3xl lg:text-5xl font-display font-bold leading-tight tracking-tight text-white">
+                    Why Choose Workflow<span class="text-blue-500">Now</span>
+</h2>
+<p class="text-slate-400 text-lg max-w-2xl font-light">
+                    Structuring the chaos of enterprise IT with speed, scalability, and security.
+                </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col gap-5 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]">
+<span class="material-symbols-outlined text-[32px]">rule</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">Standardization</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Unified processes across departments to eliminate silos.</p>
+</div>
+</div>
+<div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col gap-5 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-75"></div>
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">Ownership</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Full accountability from initial assessment to final deployment.</p>
+</div>
+</div>
+<div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col gap-5 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-100"></div>
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]">
+<span class="material-symbols-outlined text-[32px]">domain</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">Enterprise-Ready</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Scalable solutions built to handle complex structures.</p>
+</div>
+</div>
+<div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col gap-5 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-150"></div>
+<div class="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]">
+<span class="material-symbols-outlined text-[32px]">eco</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">Sustainability</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Long-term efficiency gains that grow with your business.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-28 px-6 lg:px-10 bg-[#0b1121]" id="solutions">
+<div class="absolute inset-0 z-0">
+<img alt="Abstract digital network" class="w-full h-full object-cover opacity-30 mix-blend-color-dodge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAidCM4KtvmGcnEYJiCCXM-C5brIYLS-oHaqMH6nzpj2aQWnZDvskg7otwvEOO93DQ4Ns-CsFRL45bPxVEB0q32bWttnG1a87EJ8RZVELRyE7U2wjmnowMU3R8XP977cd0bw63mWSTW2-4D-f6ZCxfFTGwI4-Wdx-UXWK0fYMxy_K76wz3QhED_PeplCuTIqjT8yOaILfAbhhCyhwrD_sp58jrZXw5IzkVQQMGpBLsZQfMFOnexGxYKlQO0XOSAPZkk4-W4xInUphJB"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#0b1121]/80 to-[#020617]"></div>
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div>
+<h2 class="text-3xl lg:text-5xl font-display font-bold leading-tight mb-4 text-white">
+                        Core <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Solutions</span>
+</h2>
+<p class="text-slate-400 font-light text-lg">Tailored modules engineered for every department.</p>
+</div>
+<button class="text-blue-400 font-bold flex items-center hover:text-white transition-colors group px-6 py-3 rounded-full hover:bg-white/5 border border-transparent hover:border-white/10">
+                    View All Solutions <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-card glass-card-hover group flex flex-col sm:flex-row gap-6 p-8 rounded-3xl border border-white/5">
+<div class="flex-1 flex flex-col justify-between z-10">
+<div>
+<div class="w-12 h-12 mb-6 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+<span class="material-symbols-outlined text-2xl icon-glow">support_agent</span>
+</div>
+<h3 class="text-2xl font-display font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">HR Service Delivery</h3>
+<p class="text-slate-400 text-sm mb-6 font-light leading-relaxed">Modernize employee experiences with a unified portal for all HR needs.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Faster Onboarding
+                                </li>
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Case Management
+                                </li>
+</ul>
+</div>
+</div>
+<div class="sm:w-1/3 aspect-square rounded-2xl bg-cover bg-center self-stretch border border-white/10 shadow-2xl group-hover:brightness-110 transition-all relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEXh3eSC2ziV6jOsco6QgY8ztR6Sd2OPrZD7L0a3xcDodidzuQEFAwNh1tqEPVeQPjv_YFFeaRwFDN7cu0-fqt-TgZpJSBYKrC-n_lpKQLftCpP63LQOaKnOZ8sqCr1WJvTNRNWgZGvIP-ElvbIrrzZzZl_Xmqm8-S_r5amw1sbmY8WEqGaKlIf_qDuH7nH6rfGl5sggK7aI8OBx0oax5KK99Me1cF-wEpVr0R2X5wZEFHRWihQZDFiMajMZBz85rxNUJ-m_EUWYqc');">
+<div class="absolute inset-0 bg-blue-900/20 mix-blend-overlay group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+<div class="glass-card glass-card-hover group flex flex-col sm:flex-row gap-6 p-8 rounded-3xl border border-white/5">
+<div class="flex-1 flex flex-col justify-between z-10">
+<div>
+<div class="w-12 h-12 mb-6 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+<span class="material-symbols-outlined text-2xl icon-glow">badge</span>
+</div>
+<h3 class="text-2xl font-display font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">Identity &amp; Access</h3>
+<p class="text-slate-400 text-sm mb-6 font-light leading-relaxed">Secure and streamline access requests with automated approval workflows.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Auto-Provisioning
+                                </li>
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Audit Compliance
+                                </li>
+</ul>
+</div>
+</div>
+<div class="sm:w-1/3 aspect-square rounded-2xl bg-cover bg-center self-stretch border border-white/10 shadow-2xl group-hover:brightness-110 transition-all relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUaLpeRWjF2Ch97ZvrEohb9uS-5X3KbfrGz7wzN8SotvekvFeH7CWNS-DrIram40jpSzOovxWb5mE83AIIvKJ7ieZuLyCW4KN89uCJ5us93Cx0QUfNeTHebZSchvSJQZAclzQbg_CxSawU7eOLjmOm18YvHYx7z8hJ3uo3tm2DsRBIdMoxl5_smeZPD5ZXKc5KkewOeWRBDfYEASOh_e-5Z41F3cH2ccECrDfd7mAxeJsHKmfTK6Sz0INgEk7hf4EmzAAIzm3ggDJ4');">
+<div class="absolute inset-0 bg-blue-900/20 mix-blend-overlay group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+<div class="glass-card glass-card-hover group flex flex-col sm:flex-row gap-6 p-8 rounded-3xl border border-white/5">
+<div class="flex-1 flex flex-col justify-between z-10">
+<div>
+<div class="w-12 h-12 mb-6 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+<span class="material-symbols-outlined text-2xl icon-glow">dns</span>
+</div>
+<h3 class="text-2xl font-display font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">IT Service Mgmt</h3>
+<p class="text-slate-400 text-sm mb-6 font-light leading-relaxed">High-velocity service management to accelerate IT delivery.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Incident Resolution
+                                </li>
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Change Management
+                                </li>
+</ul>
+</div>
+</div>
+<div class="sm:w-1/3 aspect-square rounded-2xl bg-cover bg-center self-stretch border border-white/10 shadow-2xl group-hover:brightness-110 transition-all relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDax5NlzJUMl9peM3Cf6GVuEXjc7or4qXiiRh9JMU1am5if8OAE6KHf1yczOV_Pis6XP4decvfC13xzt_5HsLX0xHtg4LIO6iHv_LLFI2yPWHJrUe__MsSBw9FsgZqNMZWx0KhkcBGvkOD6b4rWgysGhs6OfrundGSNoBbzKSgdnLVKjcLIAQv3iNrPoKbnSginm5Qbbj6EIXYfSBrMRaWiMi1-r4V41t0y-N_bvy3TWCwcfUOmCIqHRmr_vOIKJLX6AgmJE_8yonFs');">
+<div class="absolute inset-0 bg-blue-900/20 mix-blend-overlay group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+<div class="glass-card glass-card-hover group flex flex-col sm:flex-row gap-6 p-8 rounded-3xl border border-white/5">
+<div class="flex-1 flex flex-col justify-between z-10">
+<div>
+<div class="w-12 h-12 mb-6 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+<span class="material-symbols-outlined text-2xl icon-glow">inventory_2</span>
+</div>
+<h3 class="text-2xl font-display font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">Asset Management</h3>
+<p class="text-slate-400 text-sm mb-6 font-light leading-relaxed">Track hardware and software assets throughout their lifecycle.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Cost Optimization
+                                </li>
+<li class="flex items-center gap-3 text-xs font-semibold text-slate-300 uppercase tracking-wide">
+<span class="material-symbols-outlined text-green-400 text-base">check_circle</span> Lifecycle Tracking
+                                </li>
+</ul>
+</div>
+</div>
+<div class="sm:w-1/3 aspect-square rounded-2xl bg-cover bg-center self-stretch border border-white/10 shadow-2xl group-hover:brightness-110 transition-all relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFRlTWsHFLDClVzLrRsgWXMsbRv5bdqE1KO5g7Lf9fbx6TPUwQMxfW2qQGCVXwdkblxYWMfLt3J5Sg4x7-XdXMNEs2kylXIvi37LnbGG9XzodNsjDOOkbZjGztVB-piZ1Yx5G_PJMEceSW41OxKjEyYQIModgcAeWNfDHBt-6Mt-sDraGZfjVjnJyj9ei0L2uEvJwW7ybTZ2YP3rtzK3hZZ2on6K1Ui7pyH5eXrlXw3MpOcQ_kdnpGNVFby5PZrkXaYeGelfgwlVHN');">
+<div class="absolute inset-0 bg-blue-900/20 mix-blend-overlay group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-28 px-6 lg:px-10 overflow-hidden" id="methodology">
+<div class="absolute inset-0 z-0">
+<img alt="Abstract blue data lines background" class="w-full h-full object-cover opacity-30 mix-blend-screen scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxd-m9p_EQ1hNOdwIkRyXRrxbNwFcbj6FGH0k-4aRjrOnKHS1t7TUR91m_Ng-Z2XvnORjxU3g-yMQafJfR44ehXpiiJ3XL8w_lM6kIVCyYn7T7cASFlWv0OpRQRHnwz6OXj4j58YL7jzhhs-TIbcS_oZQC83194SBfGHg1RpclCjNObxk-IGeAwC79lB4uBEb8wNTqZtWEGlcuPYmG_dgqeG9sTt2iliK_BWh0uNAtmDmjN2yNEzVsxOPgHFfOW22Z6YkaJ-G2Y-Q5"/>
+<div class="absolute inset-0 bg-[#020617]/95"></div>
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-20"></div>
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto w-full">
+<div class="text-center mb-24">
+<h2 class="text-3xl lg:text-5xl font-display font-bold mb-6 text-white">Methodology</h2>
+<p class="text-slate-400 max-w-2xl mx-auto font-light text-lg">A data-driven roadmap to your digital transformation.</p>
+</div>
+<div class="relative">
+<div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-slate-800 z-0 rounded-full">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500 to-transparent w-1/2 h-full animate-[shimmer_3s_linear_infinite] shadow-[0_0_20px_rgba(59,130,246,0.8)]"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10">
+<div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-[#0f172a] border-2 border-slate-700 group-hover:border-blue-500 transition-all duration-300 flex items-center justify-center mb-6 shadow-2xl relative overflow-hidden group-hover:scale-110">
+<div class="absolute inset-0 rounded-full bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-slate-500 group-hover:text-blue-400 transition-colors z-10 icon-glow">analytics</span>
+</div>
+<h3 class="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Assessment</h3>
+<p class="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">Deep dive into current processes.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-[#0f172a] border-2 border-slate-700 group-hover:border-blue-500 transition-all duration-300 flex items-center justify-center mb-6 shadow-2xl relative overflow-hidden group-hover:scale-110">
+<div class="absolute inset-0 rounded-full bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-slate-500 group-hover:text-blue-400 transition-colors z-10 icon-glow">architecture</span>
+</div>
+<h3 class="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Design</h3>
+<p class="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">Architecting the future state.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-[#0f172a] border-2 border-slate-700 group-hover:border-blue-500 transition-all duration-300 flex items-center justify-center mb-6 shadow-2xl relative overflow-hidden group-hover:scale-110">
+<div class="absolute inset-0 rounded-full bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-slate-500 group-hover:text-blue-400 transition-colors z-10 icon-glow">construction</span>
+</div>
+<h3 class="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Implement</h3>
+<p class="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">Agile development cycles.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-[#0f172a] border-2 border-slate-700 group-hover:border-blue-500 transition-all duration-300 flex items-center justify-center mb-6 shadow-2xl relative overflow-hidden group-hover:scale-110">
+<div class="absolute inset-0 rounded-full bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-slate-500 group-hover:text-blue-400 transition-colors z-10 icon-glow">bug_report</span>
+</div>
+<h3 class="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Testing</h3>
+<p class="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">Rigorous QA &amp; reliability.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-[#0f172a] border-2 border-slate-700 group-hover:border-blue-500 transition-all duration-300 flex items-center justify-center mb-6 shadow-2xl relative overflow-hidden group-hover:scale-110">
+<div class="absolute inset-0 rounded-full bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-4xl text-slate-500 group-hover:text-blue-400 transition-colors z-10 icon-glow">rocket_launch</span>
+</div>
+<h3 class="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Optimization</h3>
+<p class="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">Continuous improvement.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 lg:px-10 border-t border-white/5 bg-[#020617] relative">
+<div class="absolute inset-0 bg-blue-900/5 mix-blend-plus-lighter"></div>
+<div class="max-w-[1280px] mx-auto w-full relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+<div class="p-8 group hover:bg-white/5 transition-colors rounded-2xl">
+<div class="text-6xl lg:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 mb-4 group-hover:from-blue-400 group-hover:to-blue-600 transition-all">30%</div>
+<p class="text-slate-300 font-bold uppercase tracking-widest text-sm">Cost Reduction</p>
+</div>
+<div class="p-8 group hover:bg-white/5 transition-colors rounded-2xl">
+<div class="text-6xl lg:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 mb-4 group-hover:from-blue-400 group-hover:to-blue-600 transition-all">60%</div>
+<p class="text-slate-300 font-bold uppercase tracking-widest text-sm">Faster Resolution</p>
+</div>
+<div class="p-8 group hover:bg-white/5 transition-colors rounded-2xl">
+<div class="text-6xl lg:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 mb-4 group-hover:from-blue-400 group-hover:to-blue-600 transition-all">99.9%</div>
+<p class="text-slate-300 font-bold uppercase tracking-widest text-sm">Process Uptime</p>
+</div>
+</div>
+<div class="text-center">
+<p class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-12 font-bold">Trusted By Industry Leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-60 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
+<div class="text-xl font-bold text-white flex items-center gap-2 font-display"><span class="material-symbols-outlined text-3xl text-blue-500">hexagon</span> NEXUS</div>
+<div class="text-xl font-bold text-white flex items-center gap-2 font-display"><span class="material-symbols-outlined text-3xl text-blue-500">change_history</span> VERTEX</div>
+<div class="text-xl font-bold text-white flex items-center gap-2 font-display"><span class="material-symbols-outlined text-3xl text-blue-500">all_inclusive</span> INFINITY</div>
+<div class="text-xl font-bold text-white flex items-center gap-2 font-display"><span class="material-symbols-outlined text-3xl text-blue-500">deployed_code</span> BLOCKCHAIN</div>
+<div class="text-xl font-bold text-white flex items-center gap-2 font-display"><span class="material-symbols-outlined text-3xl text-blue-500">cloud</span> ATMOS</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 px-4 lg:px-10">
+<div class="relative overflow-hidden rounded-3xl mx-auto w-full max-w-[1440px] group shadow-2xl shadow-blue-900/20 border border-white/10">
+<div class="absolute inset-0 z-0">
+<img alt="City skyline at night with blue tones" class="w-full h-full object-cover transition-transform duration-[2.5s] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwzrba0ZxWrtcYDH8QIS_jHMmbOzZK0XnxLeeSdm3PHJsqpeLHAltC56cW3YgfY9iulEbei35n9LhpzKl03N7htTKdIsEWowA4yM7r0OuduRxXdwGZnhxuRB_C2kN569NbMsyAhdyTT_ZxmlnmyT3Fn_jTMzdaUZ9P81rBhVytny2_rIexvYznz8ODK1AxEAa_6wzH6YK8bkg7yauP8xVCqtATmgebexFuy3ii7QcjSISwTHcL6hZNy7w72a2zY-UqtYAd8Q_m22iH"/>
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-indigo-900/80 to-blue-800/60 mix-blend-hard-light"></div>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 py-24 lg:py-32 px-6 flex flex-col items-center text-center gap-8">
+<span class="text-blue-300 font-bold tracking-widest uppercase text-sm border border-blue-400/30 px-4 py-1 rounded-full backdrop-blur-md">Future-Ready Enterprise</span>
+<h2 class="text-4xl lg:text-7xl font-display font-bold tracking-tight text-white drop-shadow-xl max-w-4xl">
+                    Ready to modernize <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">your workflow?</span>
+</h2>
+<p class="text-blue-100 text-lg lg:text-xl font-light max-w-2xl leading-relaxed">
+                    Schedule a free 30-minute discovery call with our enterprise architects and start your transformation journey.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-6">
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-16 px-10 bg-white hover:bg-blue-50 transition-all text-blue-900 text-lg font-bold shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.6)] transform hover:-translate-y-1">
+                        Get Started Today
+                    </button>
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-16 px-10 bg-transparent hover:bg-white/10 transition-all text-white text-lg font-bold border border-white/30 hover:border-white">
+                        Contact Sales
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#020617] text-white pt-24 pb-12 border-t border-white/5">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="size-8 text-blue-500">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-display font-bold">WorkflowNow</h2>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                        Empowering enterprises with intelligent automation and workflow solutions. Built for the future of work.
+                    </p>
+<div class="flex gap-4 mt-2">
+<a class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300" href="#"><span class="material-symbols-outlined text-xl">link</span></a>
+<a class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300" href="#"><span class="material-symbols-outlined text-xl">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h3 class="font-bold mb-6 text-xs uppercase tracking-widest text-slate-500">Company</h3>
+<ul class="flex flex-col gap-4 text-sm text-slate-400">
+<li><a class="hover:text-blue-400 transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Partners</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">News</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-6 text-xs uppercase tracking-widest text-slate-500">Resources</h3>
+<ul class="flex flex-col gap-4 text-sm text-slate-400">
+<li><a class="hover:text-blue-400 transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Case Studies</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Help Center</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-6 text-xs uppercase tracking-widest text-slate-500">Contact</h3>
+<ul class="flex flex-col gap-5 text-sm text-slate-400">
+<li class="flex items-start gap-3 group">
+<span class="material-symbols-outlined text-blue-500 mt-0.5 group-hover:text-white transition-colors">location_on</span>
+<span>Freiburg, Germany</span>
+</li>
+<li class="flex items-center gap-3 group">
+<span class="material-symbols-outlined text-blue-500 group-hover:text-white transition-colors">email</span>
+<span>hello@workflownow.com</span>
+</li>
+<li class="flex items-center gap-3 group">
+<span class="material-symbols-outlined text-blue-500 group-hover:text-white transition-colors">call</span>
+<span>+49 (0) 761 123456</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+<p>© 2023 WorkflowNow. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-slate-300 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-slate-300 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-slate-300 transition-colors" href="#">Cookie Settings</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
